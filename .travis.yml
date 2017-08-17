@@ -2,7 +2,15 @@ sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.2.7
-  - 2.3.4
-  - 2.4.1
+- 2.2.7
+- 2.3.4
+- 2.4.1
 before_install: gem install bundler -v 1.15.3
+deploy:
+  provider: rubygems
+  api_key:
+    secure: LPVUYZwvFn+wkgWKMKUeedyzy9bzHQL+22nIKfHVgFAdvgxgRPZEaapDeaifK5jR+TXiy+4CupVkKzC0AUTKCsmvnH2fBZjWF944x4usZghoEe/L2HUonetDIW9a2RrJXlb+ui8WpHsZ7ZF9utLfr/imnr/sCcjB+hE4kyObvWjYbfgboXtHOC/J7Wm2BShHG24Wkxb7maf/eXt/Tf0z/5xaJ+GdzVbm5lQrdCJIKDuS3XZIbiKO8Dxs4WCmkUybdc+cpcHMuWnV1evWjTBtWdTjycXRerEIMsPaSl1CqRH5/F1P20hhWy9ns1wg14B4J+Pja+FAxrVyabDZ1aRqD8lXIXmvZvm3Ty1DG6SZiqbYMJDCZB+g6271SbTHCis1CJUeWSAoyZYml5ZT+BMb2eWjQLPJ/LrBvWoqCswsj0sNzVcZ3Zh4+Qw8JwgY6CW1ZFfsPRiq9wV2BPEL9fgOkIVsIQV42dDaQDOojFr7l+xBDg+pyPVJGb9c6BK50u97kviunLWkZE2Y7gcQAD5FWS8BPvyao+EdhKpj7mlPQwmBBPgSq7Nlkr3ccAUWMUWSwNzfecUc01fJrfzc8UUffzD0iUSkN0sRKhJIySH+wTRlm+ldec6npIP6obJqGgcZClxtGC0lhEYtxV6EUbK0NRiXJsbdwqC0lXg8tgXPNpU=
+  gem: jekyll-test
+  on:
+    tags: true
+    repo: Floppy/jekyll-test
