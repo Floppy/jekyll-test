@@ -9,13 +9,22 @@ def check_site(options = {})
       timeout: 3,
     }, 
   }
-  HTMLProofer.check_directory("./_site", defaults.merge(options)).run
+  HTMLProofer.check_directory(jekyll_site_directory, defaults.merge(options)).run
+end
+
+def jekyll_site_directory
+  dir = "./_site"
+  if File.exist?('_config.yml')
+    config = YAML.load_file("_config.yml")
+    dir = config["destination"] || dir
+  end
+  dir
 end
 
 namespace :jekyll do
 
   task :rebuild do
-    sh "rm -rf _site"
+    sh "rm -rf #{jekyll_site_directory}"
     sh "bundle exec jekyll build"
   end
 
@@ -36,5 +45,5 @@ namespace :jekyll do
       check_external_hash: true,
     )
   end
-  
+
 end
