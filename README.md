@@ -1,38 +1,43 @@
-# Jekyll::Test
+# Jekyll-Test
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jekyll/test`. To experiment with that code, run `bin/console` for an interactive prompt.
+`jekyll-test` is a highly opinionated test configuration for Jekyll sites to let you create well-formed sites with minimal configuration.
 
-TODO: Delete this and the text above, and describe your gem
+It provides two rake tasks:
 
-## Installation
+`jekyll:check` will test your site for HTML validity, internal link correctness, alt tags, OpenGraph validity, https usage, and a load more. It will complain about as much as it can. You want this to pass.
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'jekyll-test'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-test
+`jekyll:check_external_links` will check all outgoing links as well. This is a separate task as this often fails due to network errors, etc, and you don't want to depend on it passing. Use it for information only.
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this line to your site's Gemfile and run `bundle`:
 
-## Development
+```ruby
+group :test do
+  gem 'jekyll-test'
+end
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+In your Rakefile, then add:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+require 'jekyll/test/tasks'
+```
+
+We suggest making `jekyll:check` your default task by adding this to your Rakefile:
+
+```rake
+task default: "jekyll:check"
+```
+
+## Coming soon
+
+* travis setup for using these tasks in a CI environment
+* spellchecking
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jekyll-test. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Floppy/jekyll-test. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
 
