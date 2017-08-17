@@ -6,6 +6,7 @@ require "jekyll/test/version"
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-test"
   spec.version       = Jekyll::Test::VERSION
+  spec.licenses      = ['MIT']
   spec.authors       = ["James Smith"]
   spec.email         = ["james@floppy.org.uk"]
 
