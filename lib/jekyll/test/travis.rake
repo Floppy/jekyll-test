@@ -20,9 +20,9 @@ namespace :jekyll do
       ]
       travis["matrix"] = {
         "fast_finish" => true,
-        "allow_failures" => {
+        "allow_failures" => [{
           "env" => %Q{TASK='jekyll:check_external_links'}
-        }
+        }]
       }
       travis["script"] = "bundle exec rake $TASK"
       # Output
