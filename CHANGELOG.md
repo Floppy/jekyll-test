@@ -1,9 +1,13 @@
 # Changelog
 
-# v0.2.0
+## 0.3.0
 
-* Add Rake tasks to check validity and links
+* Added `jekyll:configure:travis` task to automatically configure travis matrix builds.
 
-# v0.1.0
+## 0.2.0
 
-* initial release, pulls in required dependencies for testing
+* Add Rake tasks to check validity and links.
+
+## 0.1.0
+
+* initial release, pulls in required dependencies for testing.

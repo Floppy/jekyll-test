@@ -30,9 +30,22 @@ We suggest making `jekyll:check` your default task by adding this to your Rakefi
 task default: "jekyll:check"
 ```
 
+### Travis configuration
+
+To configure a travis build to run these tests, run:
+
+```
+rake jekyll:configure:travis
+```
+
+This will initialise your repo for use on travis, if necessary, then write a multi-build configuration which will run both checks together. The link check is allowed to fail, so it will not impact your CI success / failure.
+
+WARNING: This will aggressively overwrite bits of `.travis.yml`, so if you already have one, make sure it's committed or backed up so you can check the changes.
+
+It's a good idea to run the task with each new release of this gem to get the latest configuration.
+
 ## Coming soon
 
-* travis setup for using these tasks in a CI environment
 * spellchecking
 
 ## Contributing
