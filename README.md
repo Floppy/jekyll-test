@@ -1,6 +1,6 @@
 # Jekyll-Test
 
-`jekyll-test` is a highly opinionated test configuration for Jekyll sites to let you create well-formed sites with minimal configuration.
+`jekyll-test` is a highly opinionated test configuration for Jekyll sites to let you create well-formed sites with minimal configuration, built on top of [html-proofer](https://github.com/gjtorikian/html-proofer).
 
 It provides two rake tasks:
 
