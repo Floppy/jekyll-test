@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+* Update travis configuration to fix SSL check errors. Rerun `rake jekyll:configure:travis` to get the new configuration.
+* Update travis builds to run on Ruby 2.4.2
+
 ## 1.0.0
 
 * Added `jekyll:configure:travis` task to automatically configure travis matrix builds.
