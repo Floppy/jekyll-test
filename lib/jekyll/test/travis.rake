@@ -14,6 +14,13 @@ namespace :jekyll do
       travis["rvm"] = ["2.4.2"]
       travis["sudo"] = false
       travis["cache"] = "bundler"
+      travis["addons"] = {
+        "apt" => {
+          "packages" => [
+            "libcurl4-openssl-dev"
+          ]
+        }
+      }
       travis["env"] = [
         %Q{TASK='jekyll:check'},
         %Q{TASK='jekyll:check_external_links'},
