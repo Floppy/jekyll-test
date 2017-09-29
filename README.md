@@ -10,27 +10,31 @@ It provides two rake tasks:
 
 ## Usage
 
-Add this line to your site's Gemfile and run `bundle`:
+Add this to your site's `Gemfile` (or just create the file with this content if it doesn't exist) and run `bundle`:
 
 ```ruby
 source "https://rubygems.org"
+
+gem 'rake'
 
 group :test do
   gem 'jekyll-test'
 end
 ```
 
-In your Rakefile, then add:
+Then add this to `Rakefile` (or create a file with just this in it if you don't have one):
 
 ```ruby
 require 'jekyll/test/tasks'
 ```
 
-We suggest making `jekyll:check` your default task by adding this to your Rakefile:
+We suggest making `jekyll:check` your default task by adding this line to `Rakefile` as well:
 
 ```rake
 task default: "jekyll:check"
 ```
+
+You can then run `rake` and bingo, your site will be tested with `html-proofer`.
 
 ### Travis configuration
 
