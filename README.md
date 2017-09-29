@@ -13,6 +13,8 @@ It provides two rake tasks:
 Add this line to your site's Gemfile and run `bundle`:
 
 ```ruby
+source "https://rubygems.org"
+
 group :test do
   gem 'jekyll-test'
 end
