@@ -8,14 +8,20 @@ It provides two rake tasks:
 
 `jekyll:check_external_links` will check all outgoing links as well. This is a separate task as this often fails due to network errors, etc, and you don't want to depend on it passing. Use it for information only.
 
+## Requirements
+
+* Ruby 2.2 or higher (`ruby -v` to check version)
+* Bundler (`gem install bundler` if it's not there)
+
 ## Usage
 
-Add this to your site's `Gemfile` (or just create the file with this content if it doesn't exist) and run `bundle`:
+Add `jekyll-test` to your site's `Gemfile` (or just create the file with the following content if it doesn't exist) and run `bundle`:
 
 ```ruby
 source "https://rubygems.org"
 
 gem 'rake'
+gem 'github-pages'
 
 group :test do
   gem 'jekyll-test'
