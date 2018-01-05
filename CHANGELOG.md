@@ -3,7 +3,7 @@
 ## 1.1.1
 
 * Support Ruby 2.5.0
-* Update travis builds to run on Ruby 2.5.0
+* Update travis builds to run on Ruby 2.4.3 (travis currently has issues with 2.5.0)
 
 Rerun `rake jekyll:configure:travis` to get the new configuration.
 
