@@ -1,9 +1,18 @@
 # Changelog
 
+## 1.1.1
+
+* Support Ruby 2.5.0
+* Update travis builds to run on Ruby 2.5.0
+
+Rerun `rake jekyll:configure:travis` to get the new configuration.
+
 ## 1.1.0
 
-* Update travis configuration to fix SSL check errors. Rerun `rake jekyll:configure:travis` to get the new configuration.
+* Update travis configuration to fix SSL check errors.
 * Update travis builds to run on Ruby 2.4.2
+
+Rerun `rake jekyll:configure:travis` to get the new configuration.
 
 ## 1.0.0
 

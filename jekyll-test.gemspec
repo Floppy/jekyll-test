@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ["~> 2.2", "< 2.5"]
+  spec.required_ruby_version = ["~> 2.2", "< 2.6"]
 
   spec.add_dependency "jekyll", "~> 3.0"
   spec.add_dependency "rspec", "~> 3.0"
