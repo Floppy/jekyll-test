@@ -5,14 +5,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "jekyll/test/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-test"
-  spec.version       = Jekyll::Test::VERSION
-  spec.licenses      = ["MIT"]
-  spec.authors       = ["James Smith"]
-  spec.email         = ["james@floppy.org.uk"]
+  spec.name     = "jekyll-test"
+  spec.version  = Jekyll::Test::VERSION
+  spec.licenses = ["MIT"]
+  spec.authors  = ["James Smith"]
+  spec.email    = ["james@floppy.org.uk"]
 
-  spec.summary       = "An highly opinionated test configuration for Jekyll sites."
-  spec.homepage      = "https://github.com/Floppy/jekyll-test"
+  spec.summary  = "A highly opinionated test configuration for Jekyll sites."
+  spec.homepage = "https://github.com/Floppy/jekyll-test"
 
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "https://rubygems.org"

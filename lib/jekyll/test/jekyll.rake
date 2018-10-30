@@ -2,8 +2,8 @@
 
 require "html-proofer"
 
-def check_site(options = {})
-  defaults = {
+def default_options
+  {
     assume_extension: ".html",
     typhoeus: {
       ssl_verifypeer: false,
@@ -11,12 +11,17 @@ def check_site(options = {})
       timeout: 3
     }
   }
-  HTMLProofer.check_directory(jekyll_site_directory, defaults.merge(options)).run
+end
+
+def check_site(options = {})
+  HTMLProofer.check_directory(
+    jekyll_site_directory,
+    default_options.merge(options)
+  ).run
 end
 
 def jekyll_config
-  return YAML.load_file("_config.yml") if File.exist?('_config.yml')
-  {}
+  File.exist?("_config.yml") ? YAML.load_file("_config.yml") : {}
 end
 
 def jekyll_site_directory
@@ -42,7 +47,7 @@ namespace :jekyll do
       check_opengraph: true,
       disable_external: true,
       url_swap: {
-        /^#{baseurl}/ => '',
+        /^#{baseurl}/ => ""
       }
     )
   end
