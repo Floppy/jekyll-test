@@ -18,9 +18,3 @@ Style/Documentation:
     - 'spec/**/*'
     - 'test/**/*'
     - 'lib/jekyll/test.rb'
-
-# Offense count: 2
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 85
