@@ -1,7 +1,7 @@
 namespace :jekyll do
 
   namespace :configure do
-  
+
     task :travis do
       # Initialise travis
       unless File.exist?(".travis.yml")
@@ -9,9 +9,9 @@ namespace :jekyll do
       end
       # Load existing configuration
       travis = {}
-      travis = YAML.load_file(".travis.yml") 
+      travis = YAML.load_file(".travis.yml")
       # Update configuration
-      travis["rvm"] = ["2.4.3"]
+      travis["rvm"] = ["2.5.3"]
       travis["sudo"] = false
       travis["cache"] = "bundler"
       travis["addons"] = {
@@ -35,7 +35,7 @@ namespace :jekyll do
       # Output
       File.write(".travis.yml", travis.to_yaml)
     end
-  
+
   end
-  
+
 end
