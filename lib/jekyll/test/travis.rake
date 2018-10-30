@@ -6,7 +6,6 @@ namespace :jekyll do
       # Initialise travis
       sh "bundle exec travis init" unless File.exist?(".travis.yml")
       # Load existing configuration
-      travis = {}
       travis = YAML.load_file(".travis.yml")
       # Update configuration
       travis["rvm"] = ["2.5.3"]
