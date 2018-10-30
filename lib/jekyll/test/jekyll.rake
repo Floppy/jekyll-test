@@ -21,6 +21,10 @@ def jekyll_site_directory
   jekyll_config["destination"] || "./_site"
 end
 
+def baseurl
+  jekyll_config["baseurl"] || ""
+end
+
 namespace :jekyll do
 
   task :rebuild do
@@ -30,12 +34,15 @@ namespace :jekyll do
 
   task :check => :rebuild do
     check_site(
-      check_html: true, 
+      check_html: true,
       check_favicon: true,
       #check_sri: true, #soon!
       check_img_http: true,
       check_opengraph: true,
       disable_external: true,
+      url_swap: {
+        /^#{baseurl}/ => '',
+      },
     )
   end
 
