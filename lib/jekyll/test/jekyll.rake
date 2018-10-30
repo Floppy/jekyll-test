@@ -36,7 +36,7 @@ namespace :jekyll do
     check_site(
       check_html: true,
       check_favicon: true,
-      #check_sri: true, #soon!
+      check_sri: true,
       check_img_http: true,
       check_opengraph: true,
       disable_external: true,
