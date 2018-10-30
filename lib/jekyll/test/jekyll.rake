@@ -12,13 +12,13 @@ def check_site(options = {})
   HTMLProofer.check_directory(jekyll_site_directory, defaults.merge(options)).run
 end
 
+def jekyll_config
+  return YAML.load_file("_config.yml") if File.exist?('_config.yml')
+  {}
+end
+
 def jekyll_site_directory
-  dir = "./_site"
-  if File.exist?('_config.yml')
-    config = YAML.load_file("_config.yml")
-    dir = config["destination"] || dir
-  end
-  dir
+  jekyll_config["destination"] || "./_site"
 end
 
 namespace :jekyll do
