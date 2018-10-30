@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0
+
+* Check SRI tags by default
+* Automatically handle sites with non-empty baseurl
+* Run travis builds on 2.5.3
+
+Rerun `rake jekyll:configure:travis` to get the new configuration.
+
 ## 1.1.1
 
 * Support Ruby 2.5.0
