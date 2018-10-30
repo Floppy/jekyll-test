@@ -4,10 +4,10 @@ def check_site(options = {})
   defaults = {
     assume_extension: ".html",
     typhoeus: {
-      ssl_verifypeer: false, 
+      ssl_verifypeer: false,
       ssl_verifyhost: 0,
       timeout: 3,
-    }, 
+    },
   }
   HTMLProofer.check_directory(jekyll_site_directory, defaults.merge(options)).run
 end
