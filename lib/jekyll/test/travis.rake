@@ -1,15 +1,13 @@
-namespace :jekyll do
+# frozen_string_literal: true
 
+namespace :jekyll do
   namespace :configure do
-  
     task :travis do
       # Initialise travis
-      unless File.exist?(".travis.yml")
-        sh "bundle exec travis init"
-      end
+      sh "bundle exec travis init" unless File.exist?(".travis.yml")
       # Load existing configuration
       travis = {}
-      travis = YAML.load_file(".travis.yml") 
+      travis = YAML.load_file(".travis.yml")
       # Update configuration
       travis["rvm"] = ["2.4.3"]
       travis["sudo"] = false
@@ -22,20 +20,18 @@ namespace :jekyll do
         }
       }
       travis["env"] = [
-        %Q{TASK='jekyll:check'},
-        %Q{TASK='jekyll:check_external_links'},
+        %(TASK='jekyll:check'),
+        %(TASK='jekyll:check_external_links')
       ]
       travis["matrix"] = {
         "fast_finish" => true,
         "allow_failures" => [{
-          "env" => %Q{TASK='jekyll:check_external_links'}
+          "env" => %(TASK='jekyll:check_external_links')
         }]
       }
       travis["script"] = "bundle exec rake $TASK"
       # Output
       File.write(".travis.yml", travis.to_yaml)
     end
-  
   end
-  
 end
