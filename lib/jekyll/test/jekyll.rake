@@ -42,7 +42,7 @@ namespace :jekyll do
       check_opengraph: true,
       disable_external: true,
       url_swap: {
-        /^#{baseurl}/ => '',
+        /^#{baseurl}/ => ""
       }
     )
   end
