@@ -1,4 +1,6 @@
-require 'html-proofer'
+# frozen_string_literal: true
+
+require "html-proofer"
 
 def check_site(options = {})
   defaults = {
@@ -6,8 +8,8 @@ def check_site(options = {})
     typhoeus: {
       ssl_verifypeer: false,
       ssl_verifyhost: 0,
-      timeout: 3,
-    },
+      timeout: 3
+    }
   }
   HTMLProofer.check_directory(jekyll_site_directory, defaults.merge(options)).run
 end
@@ -26,13 +28,12 @@ def baseurl
 end
 
 namespace :jekyll do
-
   task :rebuild do
     sh "rm -rf #{jekyll_site_directory}"
     sh "bundle exec jekyll build"
   end
 
-  task :check => :rebuild do
+  task check: :rebuild do
     check_site(
       check_html: true,
       check_favicon: true,
@@ -42,15 +43,14 @@ namespace :jekyll do
       disable_external: true,
       url_swap: {
         /^#{baseurl}/ => '',
-      },
+      }
     )
   end
 
-  task :check_external_links => :rebuild do
+  task check_external_links: :rebuild do
     check_site(
       url_ignore: [],
-      check_external_hash: true,
+      check_external_hash: true
     )
   end
-
 end

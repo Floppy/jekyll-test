@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "jekyll/test/version"
 
 module Jekyll

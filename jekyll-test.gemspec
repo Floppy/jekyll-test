@@ -1,16 +1,17 @@
-# coding: utf-8
-lib = File.expand_path("../lib", __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "jekyll/test/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-test"
   spec.version       = Jekyll::Test::VERSION
-  spec.licenses      = ['MIT']
+  spec.licenses      = ["MIT"]
   spec.authors       = ["James Smith"]
   spec.email         = ["james@floppy.org.uk"]
 
-  spec.summary       = %q{An highly opinionated test configuration for Jekyll sites.}
+  spec.summary       = "An highly opinionated test configuration for Jekyll sites."
   spec.homepage      = "https://github.com/Floppy/jekyll-test"
 
   if spec.respond_to?(:metadata)
@@ -20,7 +21,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
@@ -29,13 +30,13 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ["~> 2.2", "< 2.6"]
 
+  spec.add_dependency "html-proofer", "~> 3.7"
   spec.add_dependency "jekyll", "~> 3.0"
-  spec.add_dependency "rspec", "~> 3.0"
   spec.add_dependency "rake", "~> 12.0"
-  spec.add_dependency 'html-proofer', "~> 3.7"
-  spec.add_dependency 'travis', "~> 1.8"
-  spec.add_dependency 'rspec-html-matchers', "~> 0.9"
+  spec.add_dependency "rspec", "~> 3.0"
+  spec.add_dependency "rspec-html-matchers", "~> 0.9"
+  spec.add_dependency "travis", "~> 1.8"
 
   spec.add_development_dependency "bundler", "~> 1.15"
-
+  spec.add_development_dependency "rubocop", "~> 0.60"
 end
