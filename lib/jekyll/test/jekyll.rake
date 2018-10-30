@@ -15,8 +15,7 @@ def check_site(options = {})
 end
 
 def jekyll_config
-  return YAML.load_file("_config.yml") if File.exist?('_config.yml')
-  {}
+  File.exist?("_config.yml") ? YAML.load_file("_config.yml") : {}
 end
 
 def jekyll_site_directory
