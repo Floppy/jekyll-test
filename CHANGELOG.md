@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+* Run travis builds on 2.6.3
+
+Rerun `rake jekyll:configure:travis` to get the new configuration.
+
 ## 1.2.0
 
 * Check SRI tags by default
