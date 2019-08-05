@@ -10,7 +10,7 @@ It provides two rake tasks:
 
 ## Requirements
 
-* Ruby 2.3 or higher (`ruby -v` to check version)
+* Ruby 2.5 or higher (`ruby -v` to check version)
 * Bundler (`gem install bundler` if it's not there)
 
 ## Usage

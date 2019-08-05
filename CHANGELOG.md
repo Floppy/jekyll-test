@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2
+
+* Remove hard dependency on travis gem - if you want to configure travis, you'll need to install the gem in your own project.
+
 ## 1.3.1
 
 * Drop support for Ruby < 2.5
