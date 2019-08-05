@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1
+
+* Drop support for Ruby < 2.5
+* Use bundler 2.0
+
 ## 1.3.0
 
 * Run travis builds on 2.6.3
