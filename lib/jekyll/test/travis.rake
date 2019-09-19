@@ -8,7 +8,7 @@ namespace :jekyll do
       # Load existing configuration
       travis = YAML.load_file(".travis.yml")
       # Update configuration
-      travis["rvm"] = ["2.6.3"]
+      travis["rvm"] = "2.6.4"
       travis["sudo"] = false
       travis["cache"] = "bundler"
       travis["addons"] = {
@@ -29,6 +29,10 @@ namespace :jekyll do
         }]
       }
       travis["script"] = "bundle exec rake $TASK"
+      travis["before_install"] = [
+        "gem update --system",
+        "gem install bundler"
+      ]
       # Output
       File.write(".travis.yml", travis.to_yaml)
     end
