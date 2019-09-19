@@ -47,6 +47,7 @@ You can then run `rake` and bingo, your site will be tested with `html-proofer`.
 To configure a travis build to run these tests, run:
 
 ```
+gem install travis
 rake jekyll:configure:travis
 ```
 
