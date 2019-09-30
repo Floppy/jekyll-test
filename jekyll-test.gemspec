@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "html-proofer", "~> 3.11"
   spec.add_dependency "jekyll", ">= 3.0", "< 5.0"
-  spec.add_dependency "rake", "~> 12.0"
+  spec.add_dependency "rake", ">= 12", "< 14"
   spec.add_dependency "rspec", "~> 3.0"
   spec.add_dependency "rspec-html-matchers", "~> 0.9"
 
