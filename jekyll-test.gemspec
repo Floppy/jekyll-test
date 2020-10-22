@@ -37,5 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rspec-html-matchers", "~> 0.9"
 
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rubocop", "~> 0.60"
+  spec.add_development_dependency "rubocop", "~> 1.0"
 end
