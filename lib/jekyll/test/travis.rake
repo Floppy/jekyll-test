@@ -8,7 +8,7 @@ namespace :jekyll do
       # Load existing configuration
       travis = YAML.load_file(".travis.yml")
       # Update configuration
-      travis["rvm"] = "2.6.4"
+      travis["rvm"] = "3.0.0"
       travis["sudo"] = false
       travis["cache"] = "bundler"
       travis["addons"] = {
