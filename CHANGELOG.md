@@ -1,10 +1,14 @@
 # Changelog
 
+## 1.5.0
+
+* Support Ruby 3
+* Update travis configurator to use Ruby 3
+
 ## 1.4.0
 
 * Support Jekyll 4 in gem dependencies
 * Upgrade bundler and use Ruby 2.6.4 on Travis builds
-
 ## 1.3.2
 
 * Remove hard dependency on travis gem - if you want to configure travis, you'll need to install the gem in your own project.
